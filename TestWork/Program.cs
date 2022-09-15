@@ -40,6 +40,26 @@ int outputMassivLen(string[] input)
     return result;
 }
 
+string[] sortedMassiv(string[] input, int length)
+{
+    string[] result = new string[length];
+    int j = 0;
+    for (int i = 0; i < input.Length; i++)
+    {
+        if(input[i].Length < 4)
+        {
+            result[j] = input[i];
+            j++;
+        }
+    }
+    return result;
+
+}
+
+string showMassiv(string[] input)
+{
+    return string.Join(", ", input);
+}
 
 Console.Clear();
 
