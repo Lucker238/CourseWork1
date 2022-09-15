@@ -19,6 +19,35 @@ int intMassivLength(string input)
     return 0;
 }
 
+string[] createInputMassiv(int length)
+{
+    string[] result = new string[length];
+    for (int i = 0; i < length; i++)
+    {
+        System.Console.Write($"Введите элемент массива №{i+1}: ");
+        result[i] = Console.ReadLine();
+    }
+    return result;
+}
+
+int outputMassivLen(string[] input)
+{
+    int result = 0;
+    for (int i = 0; i < input.Length; i++)
+    {
+        if(input[i].Length < 4) result++;
+    }
+    return result;
+}
+
+
+Console.Clear();
 
 System.Console.Write("Введите длину задаваемого массива: ");
 int massivLen = intMassivLength(Console.ReadLine());
+
+string[] massiv = createInputMassiv(massivLen);
+
+int len = outputMassivLen(massiv);
+
+System.Console.WriteLine(len);
